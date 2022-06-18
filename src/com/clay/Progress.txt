@@ -1,0 +1,78 @@
+Day 1
+Date - 28th Dec, 2021
+-   Bit Manipulation
+
+Day 2
+//Date - 29th Dec, 2021
+-   Bit Manipulation - continued...
+
+Day 3
+//Date - 30th Dec, 2021
+Arrays
+-  Rotate an array by k elements
+-  Search if a given array contains duplicate
+
+Day 4
+//Date - 31st Dec, 2021
+- no progress
+
+Day 5
+//Date - 1st Jan, 2022
+- Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+- Find the Kth Largest element in an array
+
+Day 6
+//Date - 2nd Jan, 2022
+- no progress
+
+Day 7
+//Date - 3rd Jan, 2022
+- no progress
+
+Day 8
+//Date - 4th Jan, 2022
+- no progress
+
+Day 9
+//Date - 5th Jan, 2022
+- no progress
+
+Day 10
+//Date - 6th Jan, 2022
+- Find all duplicates in an array
+- Find missing number in an array containing 1 to n elements where n is the length of the array
+
+Day 11
+//Date - 7th Jan, 2022
+- Find the maximum increasing subsequence in an array
+
+Day 12
+//Date 2nd Apr, 2022
+- Reverse a linked List
+- Find the Joining point in two linked list
+- Check loop within a linked list
+
+Day 13
+//Date - 3rd Apr, 2022
+- LRU Cache implementation
+- Distributed cache
+- DFS and BFS Search
+- Find the maximum sum of a subarray with size k
+
+//Day 14 - 4th Apr, 2022
+- Min Heap tree
+
+//Day 15 - 10th Apr, 2022
+- Tree traversal, BST
+- Find the maximum in a BST
+- Search Element in a BST
+- Find Predecessor and Successor in a BST
+
+//Day 16 - 17th Apr, 2022
+- Arrange given numbers to form largest number
+- Given a boolean matrix mat[M][N] of size M X N, modify it such that if a matrix cell mat[i][j] is 1 (or true) then make all the cells of ith row and jth column as 1.
+
+
+
+
+
