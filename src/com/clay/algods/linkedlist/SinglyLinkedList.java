@@ -3,30 +3,30 @@ package algods.linkedlist;
 import java.util.Scanner;
 
 public class SinglyLinkedList {
-    private static Node head;
+    private static ListNode head;
     private static final Scanner s1 = new Scanner(System.in);
 
     private static void addNodeFront() {
         if(null == head){
-            head = new Node(s1.nextInt());
+            head = new ListNode(s1.nextInt());
         }else{
-            Node temp = new Node(s1.nextInt());
+            ListNode temp = new ListNode(s1.nextInt());
             temp.next = head;
             head = temp;
         }
     }
 
     private static void addNodeEnd() {
-        Node node = head;
+        ListNode node = head;
         while (node.next != null) {
             node = node.next;
         }
-        node.next = new Node(s1.nextInt());
+        node.next = new ListNode(s1.nextInt());
     }
 
     //1 6 3 8 4 5
     private static void addNodeInPosition(int pos) {
-        Node temp = head;
+        ListNode temp = head;
         if (null == head || pos <= 0) {
             return;
         } else if (pos == 1) {
@@ -38,8 +38,8 @@ public class SinglyLinkedList {
             temp = temp.next;
             c++;
         }
-        Node node = temp.next;
-        temp.next = new Node(s1.nextInt());
+        ListNode node = temp.next;
+        temp.next = new ListNode(s1.nextInt());
         temp.next.next = node;
     }
 
@@ -52,7 +52,7 @@ public class SinglyLinkedList {
             System.out.println("Nothing to delete");
         }
 
-        Node temp = head;
+        ListNode temp = head;
         while (temp.next != null && temp.next.next != null) {
             temp = temp.next;
         }
@@ -68,7 +68,7 @@ public class SinglyLinkedList {
             deleteNodeFront();
         }
 
-        Node temp = head;
+        ListNode temp = head;
         int c = 0;
 
         while (c != pos - 2) {
@@ -81,7 +81,7 @@ public class SinglyLinkedList {
     }
 
     private static void displayNode() {
-        Node temp = head;
+        ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
@@ -89,7 +89,7 @@ public class SinglyLinkedList {
     }
 
     private static void displayLinkedList() {
-        Node temp = head;
+        ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;

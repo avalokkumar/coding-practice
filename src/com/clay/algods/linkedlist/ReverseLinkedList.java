@@ -4,18 +4,18 @@ public class ReverseLinkedList {
 
     public static void main(String[] args) {
 
-        Node first = new Node(11);
-        first.next = new Node(29);
-        first.next.next = new Node(23);
-        first.next.next.next = new Node(81);
-        first.next.next.next.next = new Node(199);
+        ListNode first = new ListNode(11);
+        first.next = new ListNode(29);
+        first.next.next = new ListNode(23);
+        first.next.next.next = new ListNode(81);
+        first.next.next.next.next = new ListNode(199);
 
 //        Node reversedLL = reverse(first);
-        Node reversedLL = reverseRec(first);
+        ListNode reversedLL = reverseRec(first);
         printList(reversedLL);
     }
 
-    private static void printList(Node result) {
+    private static void printList(ListNode result) {
         while (result != null) {
             System.out.print(result.data + " ");
             result = result.next;
@@ -23,10 +23,10 @@ public class ReverseLinkedList {
     }
 
 
-    private static Node reverse(Node head) {
-        Node prev = null;
-        Node current = head;
-        Node next;
+    private static ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        ListNode next;
 
         while (current != null) {
             next = current.next;
@@ -37,12 +37,12 @@ public class ReverseLinkedList {
         return prev;
     }
 
-    private static Node reverseRec(Node head) {
+    private static ListNode reverseRec(ListNode head) {
 
         if (head == null || head.next == null) {
             return head;
         }
-        Node ll = reverseRec(head.next);
+        ListNode ll = reverseRec(head.next);
         head.next.next = head;
         head.next = null;
         return ll;

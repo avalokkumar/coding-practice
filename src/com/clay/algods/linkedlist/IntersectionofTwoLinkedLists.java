@@ -2,7 +2,7 @@ package algods.linkedlist;
 
 public class IntersectionofTwoLinkedLists {
 
-    private static void printLL(Node head) {
+    private static void printLL(ListNode head) {
         while (head != null) {
             System.out.print(head.data + " ");
             head = head.next;
@@ -14,21 +14,21 @@ public class IntersectionofTwoLinkedLists {
      * s s s s f f 11 29 23 81 15 6 53 44 29
      */
     public static void main(String[] args) {
-        Node first = new Node(11);
-        first.next = new Node(29);
-        first.next.next = new Node(23);
-        first.next.next.next = new Node(81);
+        ListNode first = new ListNode(11);
+        first.next = new ListNode(29);
+        first.next.next = new ListNode(23);
+        first.next.next.next = new ListNode(81);
 
-        Node second = new Node(77);
-        second.next = new Node(15);
-        second.next.next = new Node(83);
+        ListNode second = new ListNode(77);
+        second.next = new ListNode(15);
+        second.next.next = new ListNode(83);
         first.next.next.next.next = second.next.next;
-        second.next.next.next = new Node(53);
-        second.next.next.next.next = new Node(78);
+        second.next.next.next = new ListNode(53);
+        second.next.next.next.next = new ListNode(78);
         printLL(first);
         printLL(second);
 
-        Node intPoint = findIntersection(first, second);
+        ListNode intPoint = findIntersection(first, second);
         System.out.println();
         System.out.println(intPoint != null ? intPoint.data : null);
     }
@@ -36,17 +36,17 @@ public class IntersectionofTwoLinkedLists {
     public IntersectionofTwoLinkedLists() {
     }
 
-    private static Node findIntersection(Node x, Node y) {
+    private static ListNode findIntersection(ListNode x, ListNode y) {
         int sizeX = size(x);
         int sizeY = size(y);
         int nodeSizeDiff = sizeX < sizeY ? sizeY-sizeX : sizeX-sizeY;
 
-        Node tempX, tempY;
+        ListNode tempX, tempY;
         tempX = x;
         tempY = y;
 
         while (--nodeSizeDiff >= 0) {
-            if(size(x) > size(y)){
+            if(sizeX > sizeY){
                 tempX = tempX.next;
             }else if(size(x) < size(y)){
                 tempY = tempY.next;
@@ -63,14 +63,14 @@ public class IntersectionofTwoLinkedLists {
         return null;
     }
 
-    private static Node findIntersection2(Node x, Node y) {
+    private static ListNode findIntersection2(ListNode x, ListNode y) {
 
         if (x == null || y == null) {
             return null;
         }
 
-        Node xHead = x;
-        Node yHead = y;
+        ListNode xHead = x;
+        ListNode yHead = y;
 
         while (xHead != yHead){
             xHead = xHead;
@@ -78,7 +78,7 @@ public class IntersectionofTwoLinkedLists {
         return null;
     }
 
-    private static int size(Node n) {
+    private static int size(ListNode n) {
         int counter = 0;
         while (n != null) {
             counter++;

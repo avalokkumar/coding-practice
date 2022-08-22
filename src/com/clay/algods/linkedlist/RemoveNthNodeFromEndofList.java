@@ -3,13 +3,13 @@ package algods.linkedlist;
 public class RemoveNthNodeFromEndofList {
 
     public static void main(String[] args) {
-        Node head = new Node(11);
-        head.next = new Node(29);
-        head.next.next = new Node(23);
-        head.next.next.next = new Node(81);
-        head.next.next.next.next = new Node(15);
-        head.next.next.next.next.next = new Node(6);
-        head.next.next.next.next.next.next = new Node(53);
+        ListNode head = new ListNode(11);
+        head.next = new ListNode(29);
+        head.next.next = new ListNode(23);
+        head.next.next.next = new ListNode(81);
+        head.next.next.next.next = new ListNode(15);
+        head.next.next.next.next.next = new ListNode(6);
+        head.next.next.next.next.next.next = new ListNode(53);
         printLL(head);
         System.out.println();
         removeNthNodeFromEnd(head, 5);
@@ -17,14 +17,14 @@ public class RemoveNthNodeFromEndofList {
     }
 
 
-    private static Node removeNthNodeFromEnd(Node head, int pos) {
+    private static ListNode removeNthNodeFromEnd(ListNode head, int pos) {
 
         if (head == null || head.next == null){
             return head;
         }
 
-        Node curr = head;
-        Node temp = head;
+        ListNode curr = head;
+        ListNode temp = head;
         int c = 0;
 
         while (c++ < pos){
@@ -40,7 +40,7 @@ public class RemoveNthNodeFromEndofList {
         return head;
     }
 
-    private static void printLL(Node head) {
+    private static void printLL(ListNode head) {
         while (head != null) {
             System.out.print(head.data + " ");
             head = head.next;
