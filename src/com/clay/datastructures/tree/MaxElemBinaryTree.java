@@ -1,21 +1,23 @@
 package tree;
 
+import algods.binarytree.TreeNode;
+
 //Program to find maximum element in a binary tree
 public class MaxElemBinaryTree {
 
     public static void main(String[] args) {
 
         // Create a new tree
-        Tree root = new Tree(1);
+        TreeNode root = new TreeNode(1);
 
-        root.left = new Tree(2);
-        root.right = new Tree(3);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
 
-        root.left.left = new Tree(4);
-        root.left.right = new Tree(5);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
-        root.right.left = new Tree(6);
-        root.right.right = new Tree(7);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
 
         // Print the maximum element in the tree
         System.out.println("Maximum element in the tree is: " + maxElement(root));
@@ -33,7 +35,7 @@ public class MaxElemBinaryTree {
 
         return max;
     }*/
-    private static Integer maxElement(Tree root) {
+    private static Integer maxElement(TreeNode root) {
 
         // If the root is null, return null
         if (root == null) {
@@ -60,6 +62,6 @@ public class MaxElemBinaryTree {
 
         // If the maximum element in the left subtree is equal to the maximum element in the right subtree,
         // return the root element
-        return root.data;
+        return root.val;
     }
 }

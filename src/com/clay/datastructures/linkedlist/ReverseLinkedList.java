@@ -1,5 +1,7 @@
 package linkedlist;
 
+import websites.linkedlist.Node;
+
 //Reverse a given linked list
 public class ReverseLinkedList {
 
@@ -12,7 +14,7 @@ public class ReverseLinkedList {
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
         Node reversedNode = reverseLLRec(head);
-        Node.printNode(reversedNode);
+        Node.printLL(reversedNode);
     }
 
     private static Node reverseLL(Node head) {
@@ -39,4 +41,3 @@ public class ReverseLinkedList {
         return ll;
     }
 }
-

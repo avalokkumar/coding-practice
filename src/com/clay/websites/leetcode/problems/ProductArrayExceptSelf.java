@@ -13,18 +13,21 @@ package websites.leetcode.problems;
 public class ProductArrayExceptSelf {
 
 	private static int[] productExceptSelf(int[] nums) {
+		int[] output = new int[nums.length];
+		int mult = 1;
 
-		int prod = 1;
-		for (int i = 0; i < nums.length; i++) {
-			prod *= nums[i];
-
+		for (int i=0; i< nums.length; i++) {
+			output[i] = mult;
+			mult *= nums[i];
 		}
 
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] = prod / nums[i];
+		mult = 1;
+		for (int j = nums.length-1; j >=0; j--) {
+			output[j] = output[j] * mult;
+			mult *= nums[j];
 		}
 
-		return nums;
+		return output;
 	}
 
 	public static void main(String[] args) {

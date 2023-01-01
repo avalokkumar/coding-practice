@@ -40,7 +40,8 @@ public class CombinationSum {
     public static List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
-        dfs(0, list, new ArrayList<>(), nums, target, 0);
+        dfs(0, list, new ArrayList<>(), nums, 0, target);
+//        dfs(0, list, new ArrayList<>(), nums, target, 0);
         return list;
     }
 

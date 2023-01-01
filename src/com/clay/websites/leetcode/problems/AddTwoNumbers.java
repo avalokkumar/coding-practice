@@ -1,32 +1,26 @@
 package websites.leetcode.problems;
 
-/**
- * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4 -> 8) Output: 7 -> 0 -> 8
- *
- */
-class ListNode {
-	int val;
-	ListNode next;
 
-	ListNode(int x) {
-		val = x;
-	}
-}
+import websites.leetcode.interviews.linkedlist.ListNode;
 
 public class AddTwoNumbers {
 
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		int quot = 0;
 		ListNode head = null;
-		ListNode tempNode = head;
+		ListNode dummyNode = new ListNode(0);
+		ListNode tempNode =dummyNode;
+		dummyNode.next = null;
 		while (l1 != null && l2 != null) {
 			int x = l1.val + l2.val + quot;
-
+			quot=0;
 			if (x / 10 > 0) {
 				quot = x / 10;
 				x %= 10;
 			}
-			tempNode = insertNode(tempNode, x);
+//			tempNode = insertNode(tempNode, x);
+			dummyNode.next = new ListNode(x);
+			dummyNode = dummyNode.next;
 			l1 = l1.next;
 			l2 = l2.next;
 		}
@@ -35,11 +29,13 @@ public class AddTwoNumbers {
 		while (remNode != null) {
 			int temp = remNode.val + quot;
 			quot = 0;
-			tempNode = insertNode(head, temp);
+//			tempNode = insertNode(head, temp);
+			dummyNode.next = new ListNode(temp);
+			dummyNode = dummyNode.next;
 			remNode = remNode.next;
 		}
 
-		return tempNode;
+		return tempNode.next;
 	}
 
 	private static ListNode insertNode(ListNode head, int x) {
@@ -76,7 +72,8 @@ public class AddTwoNumbers {
 		num2.next.next.next = new ListNode(8);
 
 		printNode(addTwoNumbers(num1, num2));
-
+		//2 4 3
+		//5 6 4 8
 	}
 }
 /**

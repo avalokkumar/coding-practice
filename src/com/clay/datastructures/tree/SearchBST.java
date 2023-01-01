@@ -1,10 +1,10 @@
-package tree;
+package datastructures.tree;
 
 //Give an algorithm for searching an element in binary tree.
 public class SearchBST {
 
     public static void main(String[] args) {
-        Tree node = new Tree(1);
+       /* tree.Tree node = new Tree(1);
         node.left = new Tree(2);
         node.right = new Tree(3);
         node.left.left = new Tree(4);
@@ -12,9 +12,9 @@ public class SearchBST {
         node.right.left = new Tree(6);
         node.right.right = new Tree(7);
         Tree.print(node);
-        System.out.println("\n" + searchVal(node, 5));
+        System.out.println("\n" + searchVal(node, 5));*/
     }
-
+/*
 
     private static boolean searchVal(Tree tree, int val) {
         if (tree == null) {
@@ -28,7 +28,7 @@ public class SearchBST {
         } else {
             return searchVal(tree.right, val);
         }
-    }
+    }*/
 /*
     private static boolean searchVal(Tree treeNode, int val) {
         boolean isPresent = false;

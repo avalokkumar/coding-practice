@@ -1,5 +1,7 @@
 package graph;
 
+import datastructures.graph.GraphNode;
+
 import java.util.LinkedList;
 import java.util.List;
 

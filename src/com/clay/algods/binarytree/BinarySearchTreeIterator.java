@@ -33,9 +33,9 @@ public class BinarySearchTreeIterator implements Iterator<TreeNode> {
         if (root == null) {
             return;
         }
-        addElementsInOrder(root.leftChild);
+        addElementsInOrder(root.left);
         iterator.add(root);
-        addElementsInOrder(root.rightChild);
+        addElementsInOrder(root.right);
     }
 
     private void addElementsInPreorder(TreeNode root) {
@@ -43,32 +43,32 @@ public class BinarySearchTreeIterator implements Iterator<TreeNode> {
             return;
         }
         iterator.add(root);
-        addElementsInOrder(root.leftChild);
-        addElementsInOrder(root.rightChild);
+        addElementsInOrder(root.left);
+        addElementsInOrder(root.right);
     }
 
     private void addElementsInPostorder(TreeNode root) {
         if (root == null) {
             return;
         }
-        addElementsInOrder(root.leftChild);
-        addElementsInOrder(root.rightChild);
+        addElementsInOrder(root.left);
+        addElementsInOrder(root.right);
         iterator.add(root);
     }
     public static void main(String[] args) {
 
         TreeNode root = new TreeNode(3);
-        root.leftChild = new TreeNode(9);
-        root.leftChild.leftChild = new TreeNode(4);
-        root.leftChild.rightChild = new TreeNode(5);
+        root.left = new TreeNode(9);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
-        root.rightChild = new TreeNode(20);
-        root.rightChild.leftChild = new TreeNode(15);
-        root.rightChild.rightChild = new TreeNode(7);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
         BinarySearchTreeIterator iterator = new BinarySearchTreeIterator(root, 0);
 
         while (iterator.hasNext()){
-            System.out.print(iterator.next().data + " ");
+            System.out.print(iterator.next().val + " ");
         }
     }
 

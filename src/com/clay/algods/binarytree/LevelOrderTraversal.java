@@ -12,11 +12,11 @@ public class LevelOrderTraversal {
             return;
         }
 
-        traverse(head.leftChild);
+        traverse(head.left);
         if (head != null) {
-            System.out.print(head.data + " ");
+            System.out.print(head.val + " ");
         }
-        traverse(head.rightChild);
+        traverse(head.right);
 
     }
 
@@ -30,7 +30,7 @@ public class LevelOrderTraversal {
             return lists;
         }
         List<Integer> rootValue = new ArrayList<>();
-        rootValue.add(root.data);
+        rootValue.add(root.val);
         lists.add(rootValue);
 
         nodeQueue.add(root);
@@ -41,11 +41,11 @@ public class LevelOrderTraversal {
             TreeNode treeNode = nodeQueue.remove();
             level--;
 
-            if (treeNode.leftChild != null) {
-                nodeQueue.add(treeNode.leftChild);
+            if (treeNode.left != null) {
+                nodeQueue.add(treeNode.left);
             }
-            if (treeNode.rightChild != null) {
-                nodeQueue.add(treeNode.rightChild);
+            if (treeNode.right != null) {
+                nodeQueue.add(treeNode.right);
             }
 
 
@@ -53,7 +53,7 @@ public class LevelOrderTraversal {
                 List<Integer> list = new ArrayList<>();
 
                 for (TreeNode node : nodeQueue) {
-                    list.add(node.data);
+                    list.add(node.val);
                     level++;
                 }
                 lists.add(list);
@@ -73,12 +73,12 @@ public class LevelOrderTraversal {
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.remove();
-            System.out.print(node.data + " ");
-            if (node.leftChild != null) {
-                nodeQueue.add(node.leftChild);
+            System.out.print(node.val + " ");
+            if (node.left != null) {
+                nodeQueue.add(node.left);
             }
-            if (node.rightChild != null) {
-                nodeQueue.add(node.rightChild);
+            if (node.right != null) {
+                nodeQueue.add(node.right);
             }
         }
     }
@@ -86,12 +86,12 @@ public class LevelOrderTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
 
-        root.leftChild = new TreeNode(9);
-        root.leftChild.leftChild = new TreeNode(4);
-        root.leftChild.rightChild = new TreeNode(5);
-        root.rightChild = new TreeNode(20);
-        root.rightChild.leftChild = new TreeNode(15);
-        root.rightChild.rightChild = new TreeNode(7);
+        root.left = new TreeNode(9);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
 
         printLevelOrder(root);
         //List<List<Integer>> levelOrder = getLevelOrder(root);

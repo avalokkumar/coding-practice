@@ -16,14 +16,15 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
         String[] inputStrs = {"flower", "flow", "flight"};
-        String[] inputStrs2 = {"dog","racecar","car"};
+//        String[] inputStrs2 = {"dog","racecar","car"};
 
-        System.out.println(longestCommonPrefix2(inputStrs2));
+        System.out.println(longestCommonPrefix(inputStrs));
     }
 
     private static String longestCommonPrefix(String[] inputStrs) {
         int minLen = Integer.MAX_VALUE;
-        String minStr = null;
+        String minStr = inputStrs[0];
+        StringBuilder sb = new StringBuilder();
         for (String str : inputStrs) {
             if (minLen > str.length()) {
                 minLen = str.length();
@@ -31,25 +32,26 @@ public class LongestCommonPrefix {
             }
         }
         for (int i = 0; i < minLen; i++) {
-            for (String str: inputStrs) {
+            for (String str : inputStrs) {
                 if (str.charAt(i) != minStr.charAt(i)) {
-                    return "";
+                    return sb.toString();
                 }
             }
+            sb.append(minStr.charAt(i));
         }
         return minStr;
     }
 
-    public static String  longestCommonPrefix2 ( String []  strs ) {
-        int  n;
-        if  ((n  =  strs . length)  ==  0 )  return  " " ;
-        for  ( int  i  =  0 ; i  <  strs[ 0 ] . length();  ++ i) {
-            for  ( int  j  =  1 ; j  <  n;  ++ j) {
-                if  (strs[j] . length()  <=  i  ||  strs[j] . charAt(i)  !=  strs[ 0 ] . charAt(i)) {
-                    return  strs[ 0 ] . substring( 0 , i);
+    public static String longestCommonPrefix2(String[] strs) {
+        int n;
+        if ((n = strs.length) == 0) return " ";
+        for (int i = 0; i < strs[0].length(); ++i) {
+            for (int j = 1; j < n; ++j) {
+                if (strs[j].length() <= i || strs[j].charAt(i) != strs[0].charAt(i)) {
+                    return strs[0].substring(0, i);
                 }
             }
         }
-        return  strs[ 0 ];
+        return strs[0];
     }
 }

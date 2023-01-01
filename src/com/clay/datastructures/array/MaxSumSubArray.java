@@ -11,11 +11,11 @@ public class MaxSumSubArray {
 
     private static int findMaxSum(int[] arr, int k) {
         int maxSum = Integer.MIN_VALUE;
-        int currentSum = arr[0];
+        int currentSumSoFar = arr[0];
 
         for (int i = 1; i < arr.length; i++) {
-            currentSum = Math.max(currentSum + arr[i], arr[i]);
-            maxSum = Math.max(maxSum, currentSum);
+            currentSumSoFar = Math.max(currentSumSoFar + arr[i], arr[i]);
+            maxSum = Math.max(maxSum, currentSumSoFar);
         }
         return maxSum;
     }

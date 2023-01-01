@@ -32,7 +32,8 @@ public class LengthOfLongestSubstring {
 
     public static int lengthOfLongestSubstring(String s) {
         Set<Character> charSet = new HashSet<>();
-
+        //pwwkew
+        //pw
         int left = 0;
         int res = 0;
         for (int i = 0; i < s.length(); i++) {

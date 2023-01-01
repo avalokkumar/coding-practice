@@ -82,6 +82,7 @@ public class NumberOfIsland {
         if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == '0' || visited[i][j] == 1) return;
 
         grid[i][j] = '0';
+        visited[i][j] = 1;
         dfs(grid, visited, i + 1, j);
         dfs(grid, visited, i - 1, j);
         dfs(grid, visited, i, j + 1);

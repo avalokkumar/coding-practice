@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * Leetcode ：167. Two Sum II - Input array is sorted (Easy)
+ * Leetcode ：167. Two Sum II - Input array is not sorted (Easy)
  * 
  * Input: numbers={2, 1, 11, 7, 8, 13, 5, 14}, target=16
    Output: index1=1, index2=2

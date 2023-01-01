@@ -5,12 +5,12 @@ public class IsBinarySearchTree {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(7);
 
-        root.leftChild = new TreeNode(4);
-        root.leftChild.leftChild = new TreeNode(3);
-        root.leftChild.rightChild = new TreeNode(5);
-        root.rightChild = new TreeNode(19);
-        root.rightChild.leftChild = new TreeNode(16);
-        root.rightChild.rightChild = new TreeNode(37);
+        root.left = new TreeNode(4);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(5);
+        root.right = new TreeNode(19);
+        root.right.left = new TreeNode(16);
+        root.right.right = new TreeNode(37);
 
         //System.out.println(isBinarySearchTree(root));
         System.out.println(isBinarySearchTreeOptimized(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
@@ -21,9 +21,9 @@ public class IsBinarySearchTree {
             return true;
         }
 
-        if ( root.data > min && root.data < max
-                &&isBinarySearchTreeOptimized(root.leftChild, min, root.data)
-                && isBinarySearchTreeOptimized(root.rightChild, root.data, max)) {
+        if ( root.val > min && root.val < max
+                &&isBinarySearchTreeOptimized(root.left, min, root.val)
+                && isBinarySearchTreeOptimized(root.right, root.val, max)) {
             return true;
         } else {
             return false;
@@ -35,10 +35,10 @@ public class IsBinarySearchTree {
             return true;
         }
 
-        if (isLeftSubtreeLesser(root.leftChild, root.data)
-                && isRightSubtreeGreater(root.rightChild, root.data)
-                && isBinarySearchTree(root.leftChild)
-                && isBinarySearchTree(root.rightChild)) {
+        if (isLeftSubtreeLesser(root.left, root.val)
+                && isRightSubtreeGreater(root.right, root.val)
+                && isBinarySearchTree(root.left)
+                && isBinarySearchTree(root.right)) {
             return true;
         } else {
             return false;
@@ -49,17 +49,17 @@ public class IsBinarySearchTree {
         if (root == null){
             return true;
         }
-        return (root.data > data
-                && isRightSubtreeGreater(root.leftChild, data)
-                && isRightSubtreeGreater(root.rightChild, data));
+        return (root.val > data
+                && isRightSubtreeGreater(root.left, data)
+                && isRightSubtreeGreater(root.right, data));
     }
     private static boolean isLeftSubtreeLesser(TreeNode root, int data) {
         if (root == null){
             return true;
         }
-        return (root.data <= data
-                && isLeftSubtreeLesser(root.leftChild, data)
-                && isLeftSubtreeLesser(root.rightChild, data));
+        return (root.val <= data
+                && isLeftSubtreeLesser(root.left, data)
+                && isLeftSubtreeLesser(root.right, data));
     }
 
 

@@ -8,9 +8,9 @@ public class SymmetricTree {
             return true;
         }
 
-        invertBinaryTree(root.leftChild);
+        invertBinaryTree(root.left);
 
-        return checkEquals(root.leftChild, root.rightChild);
+        return checkEquals(root.left, root.right);
     }
 
     private static boolean checkEquals(TreeNode first, TreeNode second) {
@@ -18,9 +18,9 @@ public class SymmetricTree {
             return first == second;
         }
 
-        return first.data == second.data
-                && checkEquals(first.leftChild, second.leftChild)
-                && checkEquals(first.rightChild, first.rightChild);
+        return first.val == second.val
+                && checkEquals(first.left, second.left)
+                && checkEquals(first.right, first.right);
     }
 
     private static void invertBinaryTree(TreeNode root) {
@@ -28,28 +28,28 @@ public class SymmetricTree {
             return;
         }
         swap(root);
-        invertBinaryTree(root.leftChild);
-        invertBinaryTree(root.rightChild);
+        invertBinaryTree(root.left);
+        invertBinaryTree(root.right);
 
     }
 
     private static void swap(TreeNode root) {
-        TreeNode temp = root.leftChild;
-        root.leftChild = root.rightChild;
-        root.rightChild = temp;
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
     }
 
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(2);
 
-        root.leftChild = new TreeNode(3);
-        root.leftChild.leftChild = new TreeNode(4);
-        root.leftChild.rightChild = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
-        root.rightChild = new TreeNode(3);
-        root.rightChild.leftChild = new TreeNode(5);
-        root.rightChild.rightChild = new TreeNode(3);
+        root.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(3);
         System.out.println();
         boolean isSymmetricTree = isSymmetric(root);
         System.out.println(isSymmetricTree);

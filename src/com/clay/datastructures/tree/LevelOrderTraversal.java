@@ -2,21 +2,18 @@ package tree;
 
 import algods.binarytree.TreeNode;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 
 
 public class LevelOrderTraversal {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
-        root.leftChild = new TreeNode(2);
-        root.rightChild = new TreeNode(3);
-        root.leftChild.leftChild = new TreeNode(4);
-        root.leftChild.rightChild = new TreeNode(5);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
         System.out.println(printLevelOrder(root));
 
@@ -32,14 +29,14 @@ public class LevelOrderTraversal {
         while (!q.isEmpty()) {
             TreeNode node = q.remove();
 
-            if (node.data == -1) {
+            if (node.val == -1) {
                 hasNegativeValue = true;
             }
 
-            System.out.print(node.data + " ");
+            System.out.print(node.val + " ");
 
-            if (node.leftChild != null) {
-                q.add(node.leftChild);
+            if (node.left != null) {
+                q.add(node.left);
             } else {
                 if (hasNegativeValue) {
                     return false;
@@ -47,8 +44,8 @@ public class LevelOrderTraversal {
                 q.add(new TreeNode(-1));
             }
 
-            if (node.rightChild != null) {
-                q.add(node.rightChild);
+            if (node.right != null) {
+                q.add(node.right);
             } else {
                 if (hasNegativeValue) {
                     return false;

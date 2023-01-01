@@ -47,3 +47,16 @@ public class CoinChange {
         return dp[amount] != amount + 1 ? dp[amount] : -1;
     }
 }
+
+
+//3
+
+// 4 4 4 4
+
+//1 2 3
+
+//1 2 5
+
+
+
+

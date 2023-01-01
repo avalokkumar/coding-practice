@@ -1,5 +1,7 @@
 package linkedlist;
 
+import websites.linkedlist.Node;
+
 /**
  * Return Kth to Last: Implement an algorithm to find the kth to last element of
  * a singly linked list.
@@ -26,9 +28,6 @@ public class Demo2 {
 		head.next.next.next.next.next.next.next = new Node(44);
 		head.next.next.next.next.next.next.next.next = new Node(29);
 		printLL(head);
-		for (int i = 0; i < k-1; i++) {
-			head = head.next;
-		}
 		System.out.println();
 		printLL(head);
 

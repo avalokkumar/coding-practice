@@ -16,14 +16,14 @@ public class SumOfLeftLeaves {
             return 0;
         }
 
-        int ls = getSumOfLeftLeaves(root.leftChild);
-        int rs = getSumOfLeftLeaves(root.rightChild);
+        int ls = getSumOfLeftLeaves(root.left);
+        int rs = getSumOfLeftLeaves(root.right);
 
-        if (root.leftChild != null
-                && root.leftChild.leftChild == null
-                && root.leftChild.rightChild == null){
+        if (root.left != null
+                && root.left.left == null
+                && root.left.right == null){
 
-            ls += root.leftChild.data;
+            ls += root.left.val;
         }
 
         return ls + rs;
@@ -33,13 +33,13 @@ public class SumOfLeftLeaves {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
 
-        root.leftChild = new TreeNode(9);
-        root.leftChild.leftChild = new TreeNode(4);
-        root.leftChild.rightChild = new TreeNode(5);
+        root.left = new TreeNode(9);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
-        root.rightChild = new TreeNode(20);
-        root.rightChild.leftChild = new TreeNode(15);
-        root.rightChild.rightChild = new TreeNode(7);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
 
         int sumOfLeftLeaves = getSumOfLeftLeaves(root);
 

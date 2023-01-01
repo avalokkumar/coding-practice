@@ -84,7 +84,7 @@ public class CustomHashMap<K, V> {
             return null;
         } else {
             keySet.remove(key);
-            if (key.equals(bucket[index].getKey()) && bucket[index].next == null) {
+            if (bucket[index].next == null && key.equals(bucket[index].getKey())) {
                 returnedValue = bucket[index].getValue();
                 bucket[index] = null;
             } else {

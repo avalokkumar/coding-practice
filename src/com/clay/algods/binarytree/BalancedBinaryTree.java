@@ -5,12 +5,12 @@ public class BalancedBinaryTree {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
-        root.leftChild = new TreeNode(2);
-        root.rightChild = new TreeNode(2);
-        root.leftChild.leftChild = new TreeNode(3);
-        root.rightChild.rightChild = new TreeNode(3);
-        root.leftChild.leftChild.leftChild = new TreeNode(4);
-        root.rightChild.rightChild.rightChild = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+        root.right.right = new TreeNode(3);
+        root.left.left.left = new TreeNode(4);
+        root.right.right.right = new TreeNode(4);
 
         /*root.leftChild = new TreeNode(9);
         root.rightChild = new TreeNode(20);
@@ -38,9 +38,9 @@ public class BalancedBinaryTree {
         if (root == null) {
             return;
         }
-        printInorder(root.leftChild);
-        System.out.print(root.data + " ");
-        printInorder(root.rightChild);
+        printInorder(root.left);
+        System.out.print(root.val + " ");
+        printInorder(root.right);
     }
 
 
@@ -49,6 +49,6 @@ public class BalancedBinaryTree {
             return 0;
         }
 
-        return Math.max(getHeightDiff(root.leftChild), getHeightDiff(root.rightChild)) + 1;
+        return Math.max(getHeightDiff(root.left), getHeightDiff(root.right)) + 1;
     }
 }

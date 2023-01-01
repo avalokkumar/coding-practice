@@ -36,7 +36,21 @@ public class HouseRobber {
         System.out.println(rob(nums));
     }
 
-    //2, 7, 9, 3, 1
+    //p1 = 0
+    //p2 = 0
+    //loop - 0 to n-1
+    //set tmp = p1
+    //p1 = max(p2+curr, p1)
+    //p2 = tmp
+
+    //2, 7, 9, 3, 1 - p1 - 0, p2 = 0
+    //2, 7, 9, 3, 1 - p1 - 0, p2 = 0
+    //2, 7, 9, 3, 1 - p1 - 2, p2 = 0
+    //2, 7, 9, 3, 1 - p1 - 7, p2 = 2
+    //2, 7, 9, 3, 1 - p1 - 7, p2 = 2 - t = 7
+    //2, 7, 9, 3, 1 - p1 - 11, p2 = 7, t = 11
+    //2, 7, 9, 3, 1 - p1 - 11, p2 = 11, t =  11
+    //2, 7, 9, 3, 1 - p1 - 12, p2 = 11, t =  11
 
     public static int rob(int[] nums) {
         if (nums.length == 0) return 0;

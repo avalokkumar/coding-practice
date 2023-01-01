@@ -1,4 +1,4 @@
-package graph;
+package datastructures.graph;
 
 import java.util.LinkedList;
 

@@ -52,11 +52,11 @@ public class Demo1 {
 
 }
 
-class Node {
+class Node1 {
 	int data;
 	Node next;
 
-	public Node(int data) {
+	public Node1(int data) {
 		this.data = data;
 	}
 }

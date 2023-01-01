@@ -71,8 +71,8 @@ public class LengthOfLongestSubstring {
 	public static void main(String[] args) {
 //		String str = new Scanner(System.in).nextLine();
 //		System.out.println(lengthOfLongestSubstring("abcabcbb"));
-		System.out.println(lengthOfLongestSubstring2("abcabcbb"));
-		System.out.println(lengthOfLongestSubstring2("bbbbb"));
+//		System.out.println(lengthOfLongestSubstring2("abcabcbb"));
+//		System.out.println(lengthOfLongestSubstring2("bbbbb"));
 		System.out.println(lengthOfLongestSubstring2("pwwkew"));
 	}
 }

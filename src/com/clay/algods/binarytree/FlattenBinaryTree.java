@@ -7,31 +7,31 @@ public class FlattenBinaryTree {
             return;
         }
 
-        traverse(head.leftChild);
+        traverse(head.left);
         if (head != null) {
-            System.out.print(head.data + " ");
+            System.out.print(head.val + " ");
         }
-        traverse(head.rightChild);
+        traverse(head.right);
     }
 
     private static void flattenBinaryTree(TreeNode root) {
         if (root == null) {
             return;
         }
-        flattenBinaryTree(root.leftChild);
-        flattenBinaryTree(root.rightChild);
+        flattenBinaryTree(root.left);
+        flattenBinaryTree(root.right);
 
-        TreeNode leftNode = root.leftChild;
-        root.leftChild = null;
+        TreeNode leftNode = root.left;
+        root.left = null;
 
         if (leftNode != null){
             TreeNode temp = leftNode;
 
-            while (temp.rightChild != null){
-                temp = temp.rightChild;
+            while (temp.right != null){
+                temp = temp.right;
             }
-            temp.rightChild = root.rightChild;
-            root.rightChild = leftNode;
+            temp.right = root.right;
+            root.right = leftNode;
         }
 
     }
@@ -40,13 +40,13 @@ public class FlattenBinaryTree {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
 
-        root.leftChild = new TreeNode(2);
-        root.leftChild.leftChild = new TreeNode(3);
-        root.leftChild.rightChild = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(4);
 
-        root.rightChild = new TreeNode(5);
+        root.right = new TreeNode(5);
         //root.rightChild.leftChild = new TreeNode(15);
-        root.rightChild.rightChild = new TreeNode(6);
+        root.right.right = new TreeNode(6);
 
         traverse(root);
         System.out.println();

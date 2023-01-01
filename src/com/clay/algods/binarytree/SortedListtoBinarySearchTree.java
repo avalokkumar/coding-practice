@@ -10,11 +10,11 @@ public class SortedListtoBinarySearchTree {
             return;
         }
 
-        traverse(head.leftChild);
+        traverse(head.left);
         if (head != null) {
-            System.out.print(head.data + " ");
+            System.out.print(head.val + " ");
         }
-        traverse(head.rightChild);
+        traverse(head.right);
     }
 
     public static void main(String[] args) {

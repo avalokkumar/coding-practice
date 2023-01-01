@@ -24,11 +24,13 @@ package datastructures.dynamicprogramming;
  * Input: s = "12"
  * Output: 2
  * Explanation: "12" could be decoded as "AB" (1 2) or "L" (12).
+ *
  * Example 2:
  * <p>
  * Input: s = "226"
  * Output: 3
  * Explanation: "226" could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+ *
  * Example 3:
  * <p>
  * Input: s = "06"
@@ -38,8 +40,7 @@ package datastructures.dynamicprogramming;
 public class DecodeWays {
 
     public static void main(String[] args) {
-        System.out.println(numDecodings("20"));
-//        System.out.println(numDecodings("06"));
+        System.out.println(numDecodings("226"));
     }
 
     public static int numDecodings(String s) {

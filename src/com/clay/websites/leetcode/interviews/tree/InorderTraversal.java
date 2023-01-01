@@ -9,7 +9,7 @@ public class InorderTraversal {
     public static void main(String[] args) {
 
         TreeNode root = new TreeNode(1);
-        root.rightChild = new TreeNode(2, new TreeNode(3), null);
+        root.right = new TreeNode(2, new TreeNode(3), null);
         List<Integer> result = inorderTraversal(root);
 
         for (Integer val : result) {
@@ -27,8 +27,8 @@ public class InorderTraversal {
         if (root == null) {
             return;
         }
-        traverse(root.leftChild, output);
-        output.add(root.data);
-        traverse(root.rightChild, output);
+        traverse(root.left, output);
+        output.add(root.val);
+        traverse(root.right, output);
     }
 }
